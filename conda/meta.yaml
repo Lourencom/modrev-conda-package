@@ -1,24 +1,27 @@
 package:
   name: modrev
-  version: "1.3.1"
+  version: 1.3.1
 
 source:
   url: https://filipegouveia.github.io/ModRev/ModRev-1.3.1.zip
+  sha256: 97cee5f9529c55df53ec23abad0452585c741c1038c267005fb9d3f48554af10
+
 
 build:
   number: 0
-  script:
-    - cd src
-    - make
     
 requirements:
   build:
-    - {{ compiler('c') }}
     - {{ compiler('cxx')}}
-    - boost
     - make
+    - unzip
+    - boost
+    - libgcc-ng
+    - {{ compiler('c') }}
+  
   run:
     - libgcc-ng
+    - boost
 
 about:
   home:  https://filipegouveia.github.io/ModRev/
